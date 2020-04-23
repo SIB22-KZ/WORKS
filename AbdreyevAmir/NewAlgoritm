@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string.h>
+#include <gmpxx.h>
+
+using namespace std;
+
+mpz_class gcd(mpz_class x, mpz_class y)
+{
+	mpz_class z;
+  	while (y != 0) {
+    	z = y;
+    	y = x % y;
+    	x = z;
+  }
+  return x;
+}
+
+int main(void) 
+{
+	mpz_class x,y;
+	cout<<"x= ";
+	cin>>x;
+	cout<<"y= ";
+	cin>>y;
+	cout<<"gcd(x,y)="<<gcd(x,y)<<endl;
+}
