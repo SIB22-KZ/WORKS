@@ -1,0 +1,24 @@
+#include <iostream>
+#include <gmpxx.h>
+#include <gmp.h>
+
+using namespace std;
+mpz_class gcd(mpz_class a, mpz_class b)
+{
+while (b)
+ {a %= b;	swap (a, b);
+}
+	return a;
+}
+
+int main()
+{
+mpz_class a,b;
+cout<<"a=";
+cin>>a;
+cout<<"b=";
+cin>>b;
+cout<<"GCD(a,b)="<<gcd(a,b);
+cout<<"\n";
+return 0;
+}
